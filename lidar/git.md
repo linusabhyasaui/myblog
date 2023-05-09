@@ -2,13 +2,11 @@
 
 ----------
 
-By {{ site.author }}
-
 [HOME]({{ site.baseurl }}/) || [LIDAR]({{ site.baseurl }}/lidar.html) 
 
 ----------
 
-
+TBA
 
 ----------
 

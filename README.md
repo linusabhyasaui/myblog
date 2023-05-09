@@ -10,6 +10,6 @@ This is {{ site.title }} and I am {{ site.author }}.
 
 Project Entries:
 
-> [Project Lidar]({{ site.baseurl }}/LIDAR/) 
+> [Project Lidar](/LIDAR/main.md) 
 
  © {{ site.copyright }} --- {{ site.author }} --- Version: {{ site.version }}.

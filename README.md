@@ -8,6 +8,6 @@ By {{ site.author }}
 
 Project Entries:
 
-> [Project Lidar](/lidar/main.md) 
+> [Project Lidar](/lidar.md) 
 
  © {{ site.copyright }} --- {{ site.author }} --- Version: {{ site.version }}.

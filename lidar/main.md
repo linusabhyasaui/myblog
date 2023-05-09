@@ -1,9 +1,3 @@
-<!-- @import "{{ site.theme }}"; -->
-
----
-permalink: LIDAR/
----
-
 # LIDAR
 
 By {{ site.author }}

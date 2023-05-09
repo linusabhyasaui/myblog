@@ -1,11 +1,15 @@
 # LIDAR: Scrum Master
 
+----------
+
 By {{ site.author }}
 
-[HOME]({{ site.baseurl }}/)
+[HOME]({{ site.baseurl }}/) || [LIDAR]({{ site.baseurl }}/lidar.html) 
 
-[LIDAR]({{ site.baseurl }}/LIDAR/) 
+----------
 
 
+
+----------
 
  © {{ site.copyright }} --- {{ site.author }} --- Version: {{ site.version }}.

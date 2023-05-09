@@ -1,7 +1,5 @@
 # LIDAR
 
-By {{ site.author }}
-
 ----------
 
 [HOME]({{ site.baseurl }}/)
@@ -23,13 +21,13 @@ Project Repository:
 
 Report Entries:
 
-> [CICD: Docker + Gitlab-ci](lidar/cicd.md) 
+> + [CICD: Docker + Gitlab-ci](lidar/cicd.md) 
 
-> [Git: Gitlab Project Management](lidar/git.md) 
+> + [Git: Gitlab Project Management](lidar/git.md) 
 
-> [Testing: Mock Database](lidar/mockdb.md)
+> + [Testing: Mock Database](lidar/mockdb.md)
 
-> [Scrum: Team and Project Management](lidar/scrum.md) 
+> + [Scrum: Team and Project Management](lidar/scrum.md) 
 
 ----------
 

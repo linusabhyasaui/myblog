@@ -20,6 +20,6 @@ The following are reports on things I did/learned throughout the project.
 
 Report Entries:
 
-<!-- > [CICD: Docker + Gitlab]({{ site.baseurl }}/LIDAR/CICD)  -->
+> [CICD: Docker + Gitlab](cicd.md) 
 
  © {{ site.copyright }} --- {{ site.author }} --- Version: {{ site.version }}.

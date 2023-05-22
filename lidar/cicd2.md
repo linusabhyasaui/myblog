@@ -145,6 +145,16 @@ build-image:
     - docker push $REGISTRY_SERVER/linus.abhyasa/lidar-spine:latest
 ~~~~~~~~
 
+<details>
+<summary>description</summary>
+
+This CI Task is designed to build the project using the set gradle image and store it to the pre-designated 
+location. Due to the organisation having many differently configured runners, the runner tag is used to ensure
+that the project is built on a suitable runner, which in this case is a Docker based Shell runner with no Proxy.
+<br>
+
+</details>
+
 ~~~~~~ yaml
 deploy:
   image: alpine:3.14
@@ -170,6 +180,17 @@ deploy:
     - ssh "${DEPLOY_USERNAME}@${DEPLOY_SERVER}" "cd ~/ppl_lidar-009/ && docker-compose down && docker-compose pull && docker-compose up -d"
 ~~~~~~~~
 
+<details>
+<summary>description</summary>
+
+This task is for deploying the project to the deployment server. How this section is configured is according to the 
+required access pattern to access the server provided for deployment.
+Here specifically we are required to create a temporary ssh client on the runner which is then going to connect to the
+deployment server with credentials then load the prebuilt image from the registry using server provided credentials.
+<br>
+
+</details>
+
 ~~~~~~ yaml
 sast:
   stage: test
@@ -194,6 +215,14 @@ gradle_test:
     - sh $CI_PROJECT_DIR/gradlew sonarqube
 
 ~~~~~~~~
+
+<details>
+<summary>description</summary>
+
+
+<br>
+
+</details>
 
 ----------
 

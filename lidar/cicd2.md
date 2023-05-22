@@ -33,7 +33,7 @@ stages:
 ~~~~~~~~
 
 <details>
-<summary>db</summary>
+<summary>details</summary>
 
 * `variables`:
 This is used to define which versions of a system and what ENV variables will be used within the script. This removes
@@ -109,6 +109,17 @@ build-jar:
     paths:
       - "./build/libs/$JAR_FILE"
 ~~~~~~~~
+
+<details>
+<summary>description</summary>
+
+This CI Task is designed to build the project using the set gradle image and store it to the pre-designated 
+location. Due to the organisation having many differently configured runners, the runner tag is used to ensure
+that the project is built on a suitable runner, which in this case is a Docker based Shell runner with no Proxy.
+<br>
+
+</details>
+
 
 ~~~~~~ yaml
 build-image:

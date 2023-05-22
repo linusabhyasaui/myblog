@@ -219,7 +219,7 @@ gradle_test:
 <details>
 <summary>description</summary>
 
-
+These two tasks are specifically to run SAST and Sonarqube.
 <br>
 
 </details>

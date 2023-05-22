@@ -8,7 +8,16 @@
 
 ## gitlab-ci.yml
 
-TBA
+The .gitlab-ci.yml file plays a crucial role in setting up Continuous Integration and Continuous Deployment (CI/CD) 
+pipelines using GitLab. It serves as the configuration file that defines the pipeline stages, jobs, and their associated 
+tasks. This file acts as the backbone of the CI/CD process, providing a clear and structured approach to automate the 
+build, test, and deployment of software applications. With the .gitlab-ci.yml file, developers can define the sequence 
+of actions, specify the environments, and manage the dependencies required for each stage of the pipeline. It enables 
+teams to automate repetitive tasks, ensure consistent and reliable builds, and enforce quality standards through automated 
+testing and code analysis. The flexibility and power of the .gitlab-ci.yml file allow developers to tailor the CI/CD 
+pipeline to their specific needs, enabling efficient collaboration, faster delivery cycles, and improved software quality.
+
+The following is how LIDAR Backend project's ci script is set up:
 
 ~~~~~~ yaml
 variables:
@@ -22,6 +31,66 @@ stages:
   - test
   - deploy
 ~~~~~~~~
+
+<details>
+<summary>db</summary>
+
+* `variables`:
+This is used to define which versions of a system and what ENV variables will be used within the script. This removes
+the risk of having differing settings for each stage within the CICD script.
+
+<details>
+<summary>variables</summary>
+
+* `IMAGE_OPENJDK_GRADLE: gradle:jdk17-alpine`:
+This ensures that all gradle tasks are to be run on jdk17's version of gradle. This ensures that the project is compiled
+exactly as compiled on any of the dev's computers.
+<br>
+
+* `IMAGE_DOCKER_DIND: docker:20.10.16`:
+This ensures that the gitlab runners run on this specific version of docker, which is the same as the deployment server.
+<br>
+
+* `JAR_FILE: "lidar-spine-0.0.1-SNAPSHOT.jar"`:
+This ensures that the project is always compiled to the same destination so that it is easy to find for following stages.
+<br>
+
+</details>
+<br>
+
+* `stages`:
+This is to define the stages which are required to build the project properly. This is also important as to ensure that
+each previous/required task is completed before the dependent tasks are executed. 
+
+<details>
+<summary>stages</summary>
+
+* `compile`:
+This stage is the stage used to compile each component of the project which needs compiling beforehand, i.e. gradle, nextJS.
+This ensures that the project components are build correctly, and automatically stops other steps from being run should
+a problem arise.
+<br>
+
+* `build`:
+This stage is used to build the docker images which are to be deployed or used later. This is important in this project
+as the project is using a Docker Image Repository for deployment.
+<br>
+
+* `test`:
+This stage is when all the testing is run before deployment. The project currently runs Sonarqube, SAST, and unit tests
+during this stage, that said, the project will still deploy should some tests fail (this is not the best practice) due to
+the team not yet having experience in making tests that are as the requirements of the project. The only test which is 
+critical to the project as of this writing is Sonarqube.
+<br>
+
+* `deploy`:
+This stage is used to deploy the built project to the deployment servers. This ensures that the deployment method is 
+consistent and repeatable, which ensures scalability should there be a need to deploy to multiple servers.
+<br>
+
+</details>
+
+</details>
 
 ~~~~~~ yaml
 build-jar:

@@ -11,7 +11,7 @@
 Continuous Integration and Continuous Deployment (CI/CD) are essential parts of modern software development practices. 
 They help streamline the development process, improve code quality, and ensure faster and more efficient software delivery. 
 Docker is a powerful tool for building, shipping, and running applications in a consistent and reliable manner. 
-In this report, we will discuss the creation and function of a Dockerfile, docker-compose, and gitlab-ci.yml files, 
+In this report, here I will explain the creation and function of a Dockerfile, docker-compose, and gitlab-ci.yml files, 
 which are used in a CI/CD pipeline to build, test, and deploy a Java Spring Boot application.
 
 ## Dockerfile

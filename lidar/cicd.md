@@ -37,28 +37,28 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 * `FROM openjdk:17-alpine` - 
 This specifies the base image that this Docker image will be built on. 
 In this case, we are using the openjdk:17-alpine image, which is a lightweight Linux distribution with OpenJDK 17 installed.
-<br>
+<br><br>
 
 * `ARG JAR_FILE=build/libs/lidar-spine-0.0.1-SNAPSHOT.jar` - 
 This line specifies a build-time argument called JAR_FILE, which is used to specify the name and location of the application jar file. 
 By default, it is set to build/libs/lidar-spine-0.0.1-SNAPSHOT.jar.
-<br>
+<br><br>
 
 * `RUN apk update && apk add tzdata` - 
 This line updates the package index and installs the tzdata package, which is required to set the timezone in the next line.
-<br>
+<br><br>
 
 * `ENV TZ=Asia/Jakarta` - 
 This sets the timezone to Asia/Jakarta.
-<br>
+<br><br>
 
 * `COPY ${JAR_FILE} app.jar` - 
 This copies the application jar file specified by the JAR_FILE argument to the container and renames it to app.jar.
-<br>
+<br><br>
 
 * `EXPOSE 8080` - 
 This exposes port 8080, which is the default port that the application runs on.
-<br>
+<br><br>
 
 * `ENTRYPOINT ["java","-jar","/app.jar"]` - 
 This specifies the command that should be run when the container starts. 
@@ -123,47 +123,47 @@ networks:
 
 * `version: '3'`: 
 specifies the version of the Docker Compose file format that this file adheres to.
-<br>
+<br><br>
 
 * `services`: 
 this section defines the services that make up the application. 
 In this case, there are two services defined, web and db.
-<br>
+<br><br>
 
 <details>
 <summary>Web</summary>
 
 * `web`: 
 this is the name of the first service.
-<br>
+<br><br>
 
 * `container_name`: 
 this sets the name of the container to be created. 
 In this case, it is set to lidar-spine.
-<br>
+<br><br>
 
 * `image`: 
 this specifies the image to use for the container. 
 It uses the value of the $REGISTRY_SERVER environment variable to construct the image name.
 In the case for the LIDAR project, the registry server stores previously compiled images of the project, simplifying deployment.
-<br>
+<br><br>
 
 * `restart`: 
 specifies the restart policy for the container. 
 In this case, it is set to always, which means that the container will always be restarted unless it is explicitly stopped.
 This is needed in this case due to the server on which the LIDAR project is hosted is prone to restarts.
-<br>
+<br><br>
 
 * `ports`: 
 this specifies the ports to expose on the container and the host. 
 In this case, it exposes port 8080 on the container and 10009 on the host.
 The port 10009:8080 is used as the Springboot project is set to deploy on port 8080 but the provided external port is 10009.
-<br>
+<br><br>
 
 * `depends_on`:
 this specifies that this service requires another service to be able to run. 
 In this case, the web service requires the db service to be functional.
-<br>
+<br><br>
 
 * `networks`: 
 this specifies the networks the container should use. 
@@ -178,26 +178,26 @@ This is so that the web service can access both the external network and the int
 
 * `db`:
 this is the name of the second service.
-<br>
+<br><br>
 
 * `image`:
 this sets the image for this service to postgres, this is due to the LIDAR project using postgres as the database system.
-<br>
+<br><br>
 
 * `environment`:
 Like before this defines the environment variables used.
 In this case, the environment variables are those required to set up the database.
-<br>
+<br><br>
 
 * `volumes`: 
 this mounts a volume from the host into the container. 
 In this case, it mounts the system's stored data to the container.
-<br>
+<br><br>
 
 * `ports`:
 In this case, it exposes port 5432 on the container and the host.
 The port 5432:5432 is used as postgres by default uses port 5432.
-<br>
+<br><br>
 
 * `networks`:
 In this case, the service is assigned to only use the **backend-network**.

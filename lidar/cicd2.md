@@ -90,7 +90,10 @@ consistent and repeatable, which ensures scalability should there be a need to d
 
 </details>
 
+<br>
+
 </details>
+<br>
 
 ~~~~~~ yaml
 build-jar:
@@ -119,7 +122,7 @@ that the project is built on a suitable runner, which in this case is a Docker b
 <br>
 
 </details>
-
+<br>
 
 ~~~~~~ yaml
 build-image:
@@ -154,6 +157,7 @@ that the project is built on a suitable runner, which in this case is a Docker b
 <br>
 
 </details>
+<br>
 
 ~~~~~~ yaml
 deploy:
@@ -190,6 +194,7 @@ deployment server with credentials then load the prebuilt image from the registr
 <br>
 
 </details>
+<br>
 
 ~~~~~~ yaml
 sast:
@@ -223,6 +228,7 @@ These two tasks are specifically to run SAST and Sonarqube.
 <br>
 
 </details>
+<br>
 
 ----------
 

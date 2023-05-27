@@ -204,7 +204,7 @@ In this case, the service is assigned to only use the **backend-network**.
 This is so that the db service can access both the internal network without being exposed externally.
 
 </details>
-<br>
+<br><br>
 
 * `networks`:
 this section defines the network paths that are used within the application. 
@@ -214,7 +214,7 @@ The use of networks in this application is so that external users do not have di
 the **backend-network** only.
 
 </details>
-<br>
+<br><br>
 
 ## Notes:
 

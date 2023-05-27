@@ -2,7 +2,7 @@ remote_theme: pages-themes/modernist@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 
-version:     "0003--22-May-2023"
+version:     "0004--27-May-2023"
 copyright:   "2023"
 author:      "Linus A. W."
 encoding:    UTF-8

@@ -9,6 +9,7 @@
 Project LIDAR is a project I took during Uni with my friends. 
 The eight of us were tasked to develop an app to connect a mobile phone with an AI processing server.
 Three part project consisting of a Springboot REST Server, a Next.js Web display, and a Swift IOS App.
+During the project, I was given the position of SCRUM Master.
 The following are reports on things I did/learned throughout the project.
 
 ----------

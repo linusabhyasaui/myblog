@@ -42,7 +42,16 @@ spring:
         dialect: org.hibernate.dialect.H2Dialect
 ~~~~~~~~
 
-From the code above, the most important sections for testing are the lines as following:
+Using a MockDB for unit tests in Spring Boot Java applications is of utmost importance as it brings numerous benefits 
+to the testing process. A MockDB allows developers to simulate the behavior of a real database without the need for an 
+actual database instance. This decoupling from the database ensures that unit tests focus solely on testing the 
+functionality of individual components or units of code, isolated from external dependencies. By replacing the actual 
+database with a MockDB, unit tests become faster, more reliable, and independent of external factors such as network 
+latency or data inconsistencies. Additionally, MockDBs enable developers to control the test data, allowing them to set 
+up specific scenarios and edge cases to thoroughly validate the behavior of their code. This approach promotes 
+test-driven development practices, improves code quality, and enhances overall software reliability. Utilizing a 
+MockDB in unit testing for Spring Boot Java applications is a best practice that empowers developers to write 
+comprehensive tests, ensuring robustness and stability in their codebase.
 
 ~~~~~~~~ yaml
 datasource:
@@ -59,21 +68,9 @@ jpa:
 
 The reason being that the code above ensures that the test profile has a database to work with without using the live
 database. This ensures that live data is not overwritten/damaged during testing. This is done by creating a temporary 
-database which is initialized on test start and terminated on test end, hence MockDB.
-
-Using a MockDB for unit tests in Spring Boot Java applications is of utmost importance as it brings numerous benefits 
-to the testing process. A MockDB allows developers to simulate the behavior of a real database without the need for an 
-actual database instance. This decoupling from the database ensures that unit tests focus solely on testing the 
-functionality of individual components or units of code, isolated from external dependencies. By replacing the actual 
-database with a MockDB, unit tests become faster, more reliable, and independent of external factors such as network 
-latency or data inconsistencies. Additionally, MockDBs enable developers to control the test data, allowing them to set 
-up specific scenarios and edge cases to thoroughly validate the behavior of their code. This approach promotes 
-test-driven development practices, improves code quality, and enhances overall software reliability. Utilizing a 
-MockDB in unit testing for Spring Boot Java applications is a best practice that empowers developers to write 
-comprehensive tests, ensuring robustness and stability in their codebase.
-
-In the case of LIDAR-Spine Project, it was decided that an in memory database system was the best choice for a MockDB as
-it was unlikely that the testing device was permitted to create a database system like PostGreSQL, MySQL.
+database which is initialized on test start and terminated on test end, hence MockDB. In the case of LIDAR-Spine Project, 
+it was decided that an in memory database system was the best choice for a MockDB as it was unlikely that the testing 
+device was permitted to create a database system like PostGreSQL, MySQL.
 
 As a developer, I find the use of jdbc:h2 as a MockDB for unit testing to be incredibly valuable in my projects. H2's 
 in-memory database functionality allows me to create and manipulate databases without the need for an actual database 
